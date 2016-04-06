@@ -5,9 +5,12 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.app.ListFragment;
+import android.app.Activity;
 
+import java.util.ArrayList;
 
 public class ConferenceDetailFragment extends Fragment {
     /**
@@ -36,28 +39,36 @@ public class ConferenceDetailFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_conference_detail, container, false);
 
         // Display the selected Conference, or just a welcome message
         if (conf != null) {
             ((TextView) rootView.findViewById(R.id.conference_detail)).setText(conf.name + " Research");
-        }
-        else {
+        } else {
             ((TextView) rootView.findViewById(R.id.conference_detail)).setText("Welcome to First Master/Detail");
         }
 
         return rootView;
     }
+    /*
+    public void onCreateListView(Bundle savedInstanceState) {
 
-    public View onCreateListView()
-    {
+        ArrayList<Conference> confs = new ArrayList<Conference>();
+        super.onCreate(savedInstanceState);
 
-        View confList = (ListView) findViewById(R.id.fileListView);
-        return confList;
+        // Get courses array from argument
+        if (getArguments() != null && getArguments().containsKey("conferences")) {
+            confs = getArguments().getParcelableArrayList("conferences");
+        }
+        // Initialize the display adapter
+        setListAdapter(new ArrayAdapter<Conference>(getActivity(),
+               R.id.fileListView,
+                confs));
+
     }
 
-
-
+*/
 }
+
+
