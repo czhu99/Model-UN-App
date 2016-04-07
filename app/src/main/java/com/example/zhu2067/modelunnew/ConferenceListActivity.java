@@ -76,7 +76,7 @@ public class ConferenceListActivity extends Activity
             // In single-pane mode, simply start the detail activity
             // for the selected item ID.
             Intent detailIntent = new Intent(this, ConferenceDetailActivity.class);
-            // Pass the selected Golfcourse object to the DetailActivity
+            // Pass the selected Conference object to the DetailActivity
             detailIntent.putExtra("conference", c);
             startActivity(detailIntent);
         }

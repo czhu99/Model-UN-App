@@ -9,7 +9,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 /**
- * A list fragment representing a list of Golfcourses. This fragment
+ * A list fragment representing a list of Conferences. This fragment
  * also supports tablet devices by allowing list items to be given an
  * 'activated' state upon selection. This helps indicate which item is
  * currently being viewed in a {@link ConferenceDetailFragment}.
@@ -52,7 +52,7 @@ public class ConferenceListFragment extends ListFragment {
 
     private static Callbacks sDummyCallbacks = new Callbacks() {
         @Override
-        // Modify the local dummy callback to also pass Golfcourse
+        // Modify the local dummy callback to also pass Conference
         public void onItemSelected(Conference c) {
         }
     };
@@ -70,7 +70,7 @@ public class ConferenceListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Get courses array from argument
+        // Get conferences array from argument
         if (getArguments() != null && getArguments().containsKey("conferences")) {
             confs = getArguments().getParcelableArrayList("conferences");
         }
