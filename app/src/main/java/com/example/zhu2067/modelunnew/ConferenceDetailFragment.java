@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 import android.app.ListFragment;
 import android.app.Activity;
@@ -32,7 +33,7 @@ public class ConferenceDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // If intent arguments have a course object, get it
+        // If intent arguments have a conference object, get it
         if (getArguments().containsKey("conference")) {
             conf = getArguments().getParcelable("conference");
         }
@@ -51,24 +52,34 @@ public class ConferenceDetailFragment extends Fragment {
 
         return rootView;
     }
-    /*
+
+    //Fix following code to work with ListFragment!!!
+
+/*
     public void onCreateListView(Bundle savedInstanceState) {
 
         ArrayList<Conference> confs = new ArrayList<Conference>();
         super.onCreate(savedInstanceState);
 
-        // Get courses array from argument
         if (getArguments() != null && getArguments().containsKey("conferences")) {
             confs = getArguments().getParcelableArrayList("conferences");
         }
         // Initialize the display adapter
-        setListAdapter(new ArrayAdapter<Conference>(getActivity(),
-               R.id.fileListView,
-                confs));
+        setListAdapter(new ArrayAdapter<Conference>(getActivity(), R.id.fileListView, confs));
 
     }
 
+    public void addNewFileLink(){
+
+    }
+    public void button(){
+    Button createNewButton =  new Button();
+    createNewButton = (Button) findViewById(R.id.addNewButton);
+    }
 */
+
+
+
 }
 
 

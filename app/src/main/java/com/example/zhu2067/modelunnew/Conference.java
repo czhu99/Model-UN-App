@@ -40,4 +40,7 @@ public class Conference implements Parcelable {
     private Conference(Parcel in) {
         name = in.readString();
     }
+
 }
+
+
